@@ -11,8 +11,9 @@
 <main class="wrap">
   <h1>Обработка труб судовых систем</h1>
   <p class="lead">На судне — десятки километров трубопроводов, и почти каждая
-  труба гнётся по месту под свою трассу. Сквозной пример: стальная труба
-  Ø180×7 мм из легированной стали 12Х1, радиус гиба R<sub>у</sub> = 500 мм,
+  труба гнётся по месту под свою трассу. Сквозной пример: стальная
+  <a href="https://shadeswd.duckdns.org/ref/gost-8732">труба Ø180×7 мм</a>
+  из легированной стали 12Х1, радиус гиба R<sub>у</sub> = 500 мм,
   четыре типовые конфигурации (вариант 15).</p>
 
   <h2>Цель работы</h2>
@@ -194,6 +195,31 @@
   M ≈ 8,3·10⁵ кгс·см ≈ 8,3 тс·м. Там же R<sub>н</sub> записан как 890 мм,
   хотя 500 + 180/2 = <b>590 мм</b> (в шаге 5 — исправлено).</div>
 
+  <h2>Свой вариант (пересчёт)</h2>
+  <div class="panel">
+    <p class="small">Подставьте свои исходные данные — цепочки пересчитаются
+    сразу. По умолчанию — числа разобранного варианта 15, поэтому при загрузке
+    панель воспроизводит результаты отчёта (длины дуг — с π ≈ 3,14 и
+    поправкой, округлённой до 0,1 мм, как в отчёте). Выход за допуски
+    подсвечивается красным.</p>
+    <div class="calc-inputs">
+      <label>d<sub>н</sub> — наружный диаметр, мм <input id="tr-dn" type="number" value="180" step="1" min="1"></label>
+      <label>t — толщина стенки, мм <input id="tr-t" type="number" value="7" step="0.5" min="0.1"></label>
+      <label>R<sub>у</sub> — радиус гиба, мм <input id="tr-Ry" type="number" value="500" step="10" min="1"></label>
+      <label>α₁ — угол гибов 1.2/1.3, ° <input id="tr-a1" type="number" value="90" step="5" min="1" max="180"></label>
+      <label>α₂ — угол гибов 1.4, ° <input id="tr-a2" type="number" value="60" step="5" min="1" max="180"></label>
+      <label>a — прямой участок, мм <input id="tr-a" type="number" value="1700" step="50" min="0"></label>
+      <label>b — прямой участок, мм <input id="tr-b" type="number" value="700" step="50" min="0"></label>
+      <label>c — прямой участок, мм <input id="tr-c" type="number" value="400" step="50" min="0"></label>
+      <label>l — прямой участок, мм <input id="tr-l" type="number" value="450" step="50" min="0"></label>
+      <label>Δ<sub>пр</sub> — припуск, мм <input id="tr-dpr" type="number" value="50" step="10" min="0"></label>
+      <label>h — высота гофра, мм <input id="tr-h" type="number" value="6" step="1" min="0"></label>
+      <label>a₀ — большая ось, мм <input id="tr-a0" type="number" value="187" step="1" min="1"></label>
+      <label>b₀ — малая ось, мм <input id="tr-b0" type="number" value="176" step="1" min="1"></label>
+    </div>
+    <div class="calc-out" id="tr-out"></div>
+  </div>
+
   <h2>Вывод</h2>
   <p>Для трубы Ø180×7 из стали 12Х1 назначена гибка с нагревом ТВЧ на станке
   «Кюрвинг» с шарообразным дорном: радиус 500 мм даёт утонение 17,3 % и
@@ -203,5 +229,6 @@
   <p><a href="lab-dock">← Накат на плавучий док</a> · <a href="lab-insul">Теплоизоляция →</a></p>
 </main>
 <script src="assets/site.js" data-root="./" data-page="lab-pipes"></script>
+<script src="assets/calc.js"></script>
 </body>
 </html>

@@ -26,12 +26,6 @@
   footer.className = 'site';
   footer.innerHTML = `<div class="wrap">
     <div>Учебный сайт по курсу «Технология судостроения» · разборы лабораторных работ с реальными числами</div>
-    <div>
-      <a href="https://shadeswd.duckdns.org/descgeo/">Начертательная геометрия</a> ·
-      <a href="https://shadeswd.duckdns.org/strength/">Строймех корабля</a> ·
-      <a href="https://shadeswd.duckdns.org/relmet/">Relation Metrics</a> ·
-      <a href="https://shadeswd.duckdns.org/reduktor/">Редуктор</a>
-    </div>
   </div>`;
   document.body.appendChild(footer);
   const defs = document.createElementNS('http://www.w3.org/2000/svg', 'svg');

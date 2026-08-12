@@ -202,3 +202,25 @@ table.data tr.hl td { background: #e3f2e7; }
 ol.steps { padding-left: 24px; }
 ol.steps li { margin: 12px 0; }
 ol.steps .chain { display: block; margin-top: 4px; font: 15px/1.6 ui-monospace, Consolas, monospace; background: var(--chip); border-radius: 8px; padding: 6px 12px; overflow-x: auto; }
+
+/* панель «Свой вариант (пересчёт)» */
+.calc-inputs {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px 16px; margin: 12px 0; font-family: system-ui, sans-serif; font-size: 13.5px;
+}
+.calc-inputs label { display: flex; flex-direction: column; gap: 3px; color: var(--muted); }
+.calc-inputs input {
+  font: 15px ui-monospace, Consolas, monospace; padding: 5px 9px;
+  border: 1px solid var(--line); border-radius: 6px; background: #fff; color: var(--ink); width: 100%;
+}
+.calc-inputs input:focus { outline: none; border-color: var(--accent2); box-shadow: 0 0 0 2px rgba(43,79,160,.15); }
+.calc-out .chain { display: block; margin: 6px 0; font: 15px/1.6 ui-monospace, Consolas, monospace; background: var(--chip); border-radius: 8px; padding: 6px 12px; overflow-x: auto; }
+.chain .sub { color: var(--muted); }
+.chain.bad { background: #fbe7e5; color: #9c2b22; }
+.chain.bad .sub { color: #b3554c; }
+table.data td.bad { background: #fbe7e5; color: #9c2b22; font-weight: 600; }
+
+/* карточки-ссылки (оглавления) — без подчёркивания */
+a.card { text-decoration: none; color: inherit; }
+a.card:hover { border-color: var(--accent, #155e75); }
+a.card h3 { text-decoration: none; }

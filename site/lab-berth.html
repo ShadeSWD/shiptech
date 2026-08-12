@@ -193,6 +193,23 @@
     <tr><td>14</td><td>81</td><td>64,8</td><td>28</td><td>135</td><td>108</td><td></td><td></td><td></td></tr>
   </table></div>
 
+  <h2>Свой вариант (пересчёт)</h2>
+  <div class="panel">
+    <p class="small">Подставьте свои исходные данные — цепочки пересчитаются
+    сразу. По умолчанию — числа разобранного варианта 18, поэтому при загрузке
+    панель воспроизводит результаты отчёта. Расстановка опор по интегральной
+    кривой и пять вариантов группирования — в статическом разборе выше (они
+    зависят от эпюры масс конкретного судна).</p>
+    <div class="calc-inputs">
+      <label>D<sub>сп</sub> — спусковая масса, т <input id="bt-Dsp" type="number" value="5450" step="50" min="1"></label>
+      <label>Q<sub>т</sub> — грузоподъёмность модуля, т <input id="bt-Qt" type="number" value="200" step="10" min="1"></label>
+      <label>k₀ — коэффициент запаса <input id="bt-k0" type="number" value="1.5" step="0.1" min="1"></label>
+      <label>b<sub>б</sub> — ширина смятия бруса, см <input id="bt-bb" type="number" value="80" step="5" min="1"></label>
+      <label>R<sub>расч</sub> — допускаемое давление, кгс/см² <input id="bt-Rr" type="number" value="16" step="1" min="0.1"></label>
+    </div>
+    <div class="calc-out" id="bt-out"></div>
+  </div>
+
   <h2>Вывод</h2>
   <p>Для сухогруза массой 5450 т спроектировано опорно-транспортное устройство
   из 41 модуля грузоподъёмностью по 200 т, расставленных под рамными флорами
@@ -202,5 +219,6 @@
   <p><a href="lab-hull">← Формирование корпуса</a> · <a href="lab-dock">Накат на плавучий док →</a></p>
 </main>
 <script src="assets/site.js" data-root="./" data-page="lab-berth"></script>
+<script src="assets/calc.js"></script>
 </body>
 </html>

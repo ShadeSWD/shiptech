@@ -179,6 +179,26 @@
   исправленное значение). Остальные семь положений в отчёте сходятся с
   формулами точно.</div>
 
+  <h2>Свой вариант (пересчёт)</h2>
+  <div class="panel">
+    <p class="small">Подставьте свои исходные данные — таблица и цепочки
+    пересчитаются сразу. По умолчанию — числа разобранного варианта 15,
+    поэтому при загрузке панель воспроизводит результаты отчёта.
+    Превышение допускаемой нагрузки R<sub>d</sub> подсвечивается красным.</p>
+    <div class="calc-inputs">
+      <label>L<sub>д</sub> — длина дока, м <input id="dk-Ld" type="number" value="128" step="1" min="1"></label>
+      <label>l<sub>б</sub> — длина группы ГБО, м <input id="dk-lb" type="number" value="16" step="1" min="1"></label>
+      <label>Число ГБО <input id="dk-N" type="number" value="8" step="1" min="1" max="40"></label>
+      <label>Q<sub>б</sub> — балласт группы, т <input id="dk-Qb" type="number" value="1050" step="10" min="0"></label>
+      <label>Q<sub>т</sub> — нагрузка на опору, т <input id="dk-Qt" type="number" value="250" step="5" min="0"></label>
+      <label>n — число опор ТОМ <input id="dk-n" type="number" value="40" step="1" min="1"></label>
+      <label>q — насосы, т/мин <input id="dk-q" type="number" value="35" step="1" min="0.1"></label>
+      <label>R<sub>d</sub> — допускаемая нагрузка, т <input id="dk-Rd" type="number" value="1200" step="10" min="1"></label>
+    </div>
+    <div class="calc-out" id="dk-out"></div>
+    <div class="tbl-scroll" id="dk-table"></div>
+  </div>
+
   <h2>Вывод</h2>
   <p>Накат судна массой 10 000 т на док длиной 128 м выполняется за восемь
   положений с покомпонентной откачкой по 1050 т балласта из каждой занятой
@@ -188,5 +208,6 @@
   <p><a href="lab-berth">← Опорно-транспортное устройство</a> · <a href="lab-pipes">Обработка труб →</a></p>
 </main>
 <script src="assets/site.js" data-root="./" data-page="lab-dock"></script>
+<script src="assets/calc.js"></script>
 </body>
 </html>
