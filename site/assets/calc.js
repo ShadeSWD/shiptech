@@ -112,7 +112,7 @@
           a1 = num('tr-a1'), a2 = num('tr-a2'),
           a = num('tr-a'), b = num('tr-b'), c = num('tr-c'), l = num('tr-l'),
           dpr = num('tr-dpr'), h = num('tr-h'), a0 = num('tr-a0'), b0 = num('tr-b0');
-    const PI = 3.14; // как в отчёте
+    const PI = 3.14; // как в учебном примере
     const r = (dn - t) / 2;
     const K = Math.round((Ry - r * r / Ry) * 10) / 10; // поправка дуги, до 0,1 мм
     const arc = (ang) => PI * ang / 180 * K;
@@ -122,7 +122,7 @@
     const L4 = Math.round(a + c + b + arc(2 * a2) + dpr);
     const gam = r / Ry;
     const E = gam * 100;
-    const tmin = Math.floor((1 - gam) * t / (1 + gam) * 100) / 100; // усечение до 0,01 — как в отчёте
+    const tmin = Math.floor((1 - gam) * t / (1 + gam) * 100) / 100; // усечение до 0,01 — как в учебном примере
     const kg = h / dn * 100, okG = kg <= 5;
     const ko = (a0 - b0) / dn * 100, okO = ko <= 8;
     const Rmin = 1.5 * dn, okR = Ry >= Rmin;
