@@ -502,8 +502,8 @@
         });
       });
       g += `<line x1="${n1(X(Fm))}" y1="46" x2="${n1(X(Fm))}" y2="232" stroke="#b3382e" stroke-width="1.6" stroke-dasharray="6 4"/>`;
-      const far = Math.abs(X(tc) - X(Fm)) > 130;      // метки не столкнутся
-      g += `<text x="${n1(X(Fm) + 6)}" y="${far ? 41 : 252}" style="font:11px system-ui;fill:#b3382e">Ф_м = ${fmt(Fm, 1)} ${smen(Math.round(Fm))}</text>`;
+      g += `<text x="${n1(Math.max(X(Fm) - 6, gx0 + 100))}" y="41" text-anchor="end" ` +
+        `style="font:11px system-ui;fill:#b3382e">Ф_м = ${fmt(Fm, 1)} ${smen(Math.round(Fm))}</text>`;
       g += `<line x1="${n1(X(tc))}" y1="46" x2="${n1(X(tc))}" y2="232" stroke="#155e75" stroke-width="1.6"/>`;
       g += `<text x="${n1(X(tc) - 6)}" y="41" text-anchor="end" style="font:11px system-ui;fill:#155e75">t_с = ${tc} ${smen(tc)}</text>`;
       g += T(20, 268, S.pos === 5
@@ -525,7 +525,8 @@
         for (let k = 0; k < npos; k++) {
           const xx = px0 + 6 + k * (Math.min(Lpp, Lpr) * psc) / npos;
           if (k) p += `<line x1="${n1(xx)}" y1="${n1(yy)}" x2="${n1(xx)}" y2="${n1(yy + Bpp * psc)}" stroke="#2b4fa0" stroke-width="1" stroke-dasharray="4 3"/>`;
-          p += `<text x="${n1(xx + (Math.min(Lpp, Lpr) * psc) / npos / 2)}" y="${n1(yy + Bpp * psc / 2 + 4)}" text-anchor="middle" style="font:11px system-ui;fill:#2b4fa0">поз. ${k}</text>`;
+          const pl = npos === 5 ? k : [0, 1, 3, 4][k];      // у ПП-4 исключена позиция 2
+          p += `<text x="${n1(xx + (Math.min(Lpp, Lpr) * psc) / npos / 2)}" y="${n1(yy + Bpp * psc / 2 + 4)}" text-anchor="middle" style="font:11px system-ui;fill:#2b4fa0">поз. ${pl}</text>`;
         }
       }
       p += T(px0, py0 + Bpr * psc + 20, `ПП-${npos}: длина = ${npos} × ${fmt(big, 1)} + 6 = ${fmt(Lpp, 1)} м; ширина = ${fmt(small, 1)} + 2 = ${fmt(Bpp, 1)} м; ` +
