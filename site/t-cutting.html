@@ -672,15 +672,18 @@ main table { display: block; max-width: 100%; overflow-x: auto; }
   показывает, насколько «круче» требуемого должен гнуть станок.</p>
 
   <svg viewBox="0 0 640 242" class="geo-board" style="max-width:640px" role="img" aria-label="Эпюра напряжений при пластической гибке профиля и диаграмма пружинения при разгрузке">
-    <rect x="110" y="60" width="14" height="105" fill="rgba(22,22,26,.10)" stroke="#16161a" stroke-width="1.4"/>
-    <circle cx="117" cy="54" r="11" fill="rgba(22,22,26,.10)" stroke="#16161a" stroke-width="1.4"/>
-    <rect x="94" y="165" width="46" height="10" fill="rgba(22,22,26,.10)" stroke="#16161a" stroke-width="1.4"/>
-    <text x="30" y="50" style="font:10.5px system-ui;fill:#6b6b74">полособульб</text>
-    <line x1="90" y1="120" x2="300" y2="120" stroke="#b3382e" stroke-width="1.3" stroke-dasharray="5 3"/>
-    <text x="146" y="114" style="font:10.5px system-ui;fill:#b3382e">нейтральный слой смещён</text>
+    <path d="M 110 178 L 110 60 Q 110 48 122 48 L 132 48 Q 152 48 152 68 Q 152 84 134 86 L 124 86 L 124 178 Z"
+          fill="rgba(22,22,26,.10)" stroke="#16161a" stroke-width="1.5"/>
+    <text x="22" y="52" style="font:10.5px system-ui;fill:#6b6b74">полособульб:</text>
+    <text x="22" y="66" style="font:10.5px system-ui;fill:#6b6b74">бульб с одной</text>
+    <text x="22" y="80" style="font:10.5px system-ui;fill:#6b6b74">стороны стенки</text>
+    <line x1="104" y1="104" x2="300" y2="104" stroke="#b3382e" stroke-width="1.3" stroke-dasharray="5 3"/>
+    <text x="158" y="98" style="font:10.5px system-ui;fill:#b3382e">нейтральный слой смещён к бульбу</text>
+    <line x1="104" y1="119" x2="196" y2="119" stroke="#6b6b74" stroke-width="0.9" stroke-dasharray="3 3"/>
+    <text x="158" y="132" style="font:10px system-ui;fill:#6b6b74">середина высоты профиля</text>
     <line x1="200" y1="44" x2="200" y2="186" stroke="#16161a" stroke-width="1.2"/>
-    <polygon points="200,46 258,46 258,108 200,120" fill="rgba(179,56,46,.20)" stroke="#b3382e" stroke-width="1.3"/>
-    <polygon points="200,120 142,132 142,180 200,180" fill="rgba(21,94,117,.20)" stroke="#155e75" stroke-width="1.3"/>
+    <polygon points="200,46 258,46 258,92 200,104" fill="rgba(179,56,46,.20)" stroke="#b3382e" stroke-width="1.3"/>
+    <polygon points="200,104 142,116 142,180 200,180" fill="rgba(21,94,117,.20)" stroke="#155e75" stroke-width="1.3"/>
     <text x="262" y="54" style="font:10.5px system-ui;fill:#b3382e">σт</text>
     <text x="150" y="194" style="font:10.5px system-ui;fill:#155e75">−σт</text>
     <line x1="340" y1="210" x2="620" y2="210" stroke="#6b6b74" stroke-width="1.2"/>
