@@ -7,6 +7,7 @@
   const logo = `<span style="font-size:24px;line-height:1" aria-hidden="true">🏭</span>`;
   const nav = [
     { href: '', key: 'index', title: 'Обзор' },
+    { href: 'theory', key: 'theory', title: 'Теория' },
     { href: 'unfold', key: 'unfold', title: 'Развёртка листов' },
     { href: 'bending', key: 'bending', title: 'Гибка листа' },
     { href: 'workshop', key: 'workshop', title: 'Сборочные площади' },
