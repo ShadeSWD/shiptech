@@ -134,13 +134,13 @@
       const pts = [];
       for (let t = -1; t <= 1.0001; t += 0.25) pts.push([fx(f, yc + t * hh), yc + t * hh]);
       s1 += `<path d="${smooth(pts)}" fill="none" stroke="${f.n === M ? '#16161a' : '#9a9aa2'}" stroke-width="${f.n === M ? 2.2 : 1.2}"/>`;
-      s1 += T(f.x - 7, yc + hh + 26, String(f.n), '11px system-ui');
+      s1 += T(f.x - 7, yc + hh + 46, String(f.n), '11px system-ui');
     });
     // нормаль, касательная, хорда, точка касания
     s1 += `<line x1="46" y1="${yc}" x2="662" y2="${yc}" stroke="#2b4fa0" stroke-width="1.6" stroke-dasharray="7 4"/>`;
     s1 += T(80, yc - 10, 'нормаль к среднему шпангоуту', '11px system-ui;fill:#2b4fa0');
     s1 += `<line x1="${n1(x0)}" y1="${yc - hh - 22}" x2="${n1(x0)}" y2="${yc + hh + 8}" stroke="#8a5b1d" stroke-width="1.6"/>`;
-    s1 += T(x0 - 96, yc - hh - 28, 'касательная К', '11px system-ui;fill:#8a5b1d');
+    s1 += T(x0 + 8, yc - hh - 28, 'касательная К', '11px system-ui;fill:#8a5b1d');
     const xch = fx(fr[4], yc - hh);
     s1 += `<line x1="${n1(xch)}" y1="${yc - hh}" x2="${n1(xch)}" y2="${yc + hh}" stroke="#8a5b1d" stroke-width="1.3" stroke-dasharray="5 4"/>`;
     s1 += T(xch + 6, yc - hh - 6, 'хорда Х', '11px system-ui;fill:#8a5b1d');
@@ -156,12 +156,13 @@
       if (Math.abs(f.dl) > 1e-9) {
         s1 += `<line x1="${n1(f.x)}" y1="${yc}" x2="${n1(f.x)}" y2="${n1(gp[i][1])}" stroke="#b3382e" stroke-width="1" stroke-dasharray="2 2"/>`;
         const above = gp[i][1] < yc;
-        s1 += T(f.x - 16, above ? gp[i][1] - 6 : gp[i][1] + 14, fmt(f.dl, 4), '10px system-ui;fill:#b3382e');
+        const near = f.x < 130;   // у левого края подпись уводим вправо от паза
+        s1 += T(near ? f.x + 8 : f.x - 16, above ? gp[i][1] - 6 : gp[i][1] + 14, fmt(f.dl, 4), '10px system-ui;fill:#b3382e');
       }
     });
-    s1 += T(46, 30, `геодезическая линия; Δ показаны крупнее прогрессов в ${fmt(exagg, 0)} раз`, '11.5px system-ui;fill:#b3382e');
-    s1 += T(46, yc - hh - 10, 'верхний паз', '11px system-ui');
-    s1 += T(46, yc + hh + 16, 'нижний паз', '11px system-ui');
+    s1 += T(46, 20, `геодезическая линия; Δ показаны крупнее прогрессов в ${fmt(exagg, 0)} раз`, '11.5px system-ui;fill:#b3382e');
+    s1 += T(46, yc - hh - 26, 'верхний паз', '11px system-ui');
+    s1 += T(46, yc + hh + 30, 'нижний паз', '11px system-ui');
     s1 += T(46, 330, `слева прогрессы ${a.dec ? 'убывают' : 'растут'} наружу → Δ ${a.dec ? 'вверх' : 'вниз'};` +
       ` справа ${b.dec ? 'убывают' : 'растут'} → Δ ${b.dec ? 'вверх' : 'вниз'}`, '11px system-ui');
     put('uf-svg1', `<svg viewBox="0 0 ${W} 345" class="geo-board" style="max-width:${W}px">${s1}</svg>`);
